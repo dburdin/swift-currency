@@ -2,15 +2,26 @@
 @import "../utils/colors.scss";
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
 
-  background-color: $background-color;
+  color: $text-primary;
+  background-color: $background;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
 // custom
 .global-container {
   margin: 0 auto;
