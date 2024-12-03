@@ -2,7 +2,7 @@ import "./About.scss";
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="global-container">
       <div className="wrapper">
         <h1>Currency Converter</h1>
         <p>

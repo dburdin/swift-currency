@@ -2,7 +2,7 @@
 import { CurrencyApiProp } from "../../types/types";
 
 const Home = ({ currenciesInfo }: { currenciesInfo: CurrencyApiProp[] }) => {
-  return <div className="container">{/* <CurrencyConverter /> */}</div>;
+  return <div className="global-container">{/* <CurrencyConverter /> */}</div>;
 };
 
 export default Home;

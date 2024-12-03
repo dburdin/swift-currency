@@ -31,7 +31,7 @@ export const App = () => {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/swift-currency/">
       <Header isLoading={isLoading} currenciesInfo={currenciesInfo} />
       <main className="main">
         <Routes>

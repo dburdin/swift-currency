@@ -1,0 +1,17 @@
+@import "../../../styles/utils/colors.scss";
+
+.currency-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.currency-info-item {
+  display: flex;
+  gap: 5px;
+}
+
+.accent-color {
+  color: $accent-color;
+  font-weight: 700;
+}
