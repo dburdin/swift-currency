@@ -1,17 +1,15 @@
-import "./footer.scss";
+import styles from "./Footer.module.scss";
 
 export const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <div className="global-container">
-        <div className="footer-wrapper">
+        <div className={styles.footerWrapper}>
           Swift Currency
           <br />
-          <span className="label">© All rights reserved</span>
+          <span className={styles.label}>© All rights reserved</span>
         </div>
       </div>
     </footer>
   );
 };
-
-export default Footer;

@@ -1,11 +1,9 @@
-@import "../../styles/utils/colors.scss";
-
 .header {
   background-color: #36454f;
   height: 80px;
 }
 
-.header-wrapper {
+.headerWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;

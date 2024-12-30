@@ -1,10 +1,10 @@
-import "./About.scss";
+import styles from "./About.module.scss";
 
 const About = () => {
   return (
     <div className="global-container">
-      <div className="wrapper">
-        <h1>Currency Converter</h1>
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>Currency Converter</h1>
         <p>
           This is a currency converter application that allows users to convert between different currencies. The application has a
           header that displays the current exchange rates for USD and EUR with respect to UAH, which is fetched from a public API. The
@@ -12,9 +12,11 @@ const About = () => {
           corresponding route.
         </p>
 
-        <h2>Technologies Used:</h2>
-        <ul className="list">
+        <h2 className={styles.title}>Technologies Used:</h2>
+        <ul className={styles.list}>
           <li>- React</li>
+          <li>- React-Router-Dom</li>
+          <li>- React-Hook-Form</li>
           <li>- TypeScript</li>
           <li>- HTML</li>
           <li>- SCSS</li>

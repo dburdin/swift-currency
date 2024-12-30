@@ -1,10 +1,10 @@
-import "./logo.scss";
+import styles from "./Logo.module.scss";
 
 export const Logo = () => {
   return (
     <a href="/">
-      <div className="logo-wrapper">
-        <span className="logo-text mobile">
+      <div className={styles.logoWrapper}>
+        <span className="mobile">
           Swift
           <br />
           Currency

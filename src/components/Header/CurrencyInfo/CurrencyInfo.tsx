@@ -1,25 +1,23 @@
 import { useEffect, useState } from "react";
 
-import { CurrencyApiProp } from "../../../types/types";
+import { RatesProp } from "../../../types";
 
-import "./currency-info.scss";
+import styles from "./CurrencyInfo.module.scss";
 
-export const CurrencyInfo = ({ currenciesInfo }: { currenciesInfo: CurrencyApiProp[] }) => {
-  const [headerCurrencies, setHeaderCurrencies] = useState<CurrencyApiProp[]>([]);
+export const CurrencyInfo = ({ rates }: { rates: RatesProp[] }) => {
+  const [headerCurrencies, setHeaderCurrencies] = useState<RatesProp[]>([]);
 
   useEffect(() => {
-    // const currenciesInfo = JSON.parse(localStorage.getItem("currenciesInfo") || "[]");
-    const filteredCurrencies = currenciesInfo.filter((currency: CurrencyApiProp) => currency.cc === "USD" || currency.cc === "EUR");
+    const filteredCurrencies = rates.filter((currency: RatesProp) => currency.cc === "USD" || currency.cc === "EUR");
     setHeaderCurrencies(filteredCurrencies);
-  }, [currenciesInfo]);
+  }, [rates]);
 
   return (
-    <ul className="currency-info">
+    <ul className={styles.currencyInfo}>
       {headerCurrencies.map((currency) => (
-        <li key={currency.cc} className="currency-info-item">
-          <span className="accent-color">{currency.cc}</span> {currency.rate.toFixed(2)}
-          <span className="accent-color mobile">||</span> <span className="mobile">On:</span>
-          <span className="accent-color mobile">{currency.exchangedate}</span>
+        <li key={currency.cc} className={styles.currencyInfoItem}>
+          <span className={styles.accentColor}>{currency.cc}</span> {currency.rate.toFixed(2)}
+          <img src="src/assets/svg/ukraine-flag-icon.svg" alt="ukraine flag" width={"20px"} />
         </li>
       ))}
     </ul>

@@ -1,8 +1,13 @@
-// import CurrencyConverter from "../../components/CurrencyConverter/CurrencyConverter";
-import { CurrencyApiProp } from "../../types/types";
+import { RatesProp } from "../../types";
 
-const Home = ({ currenciesInfo }: { currenciesInfo: CurrencyApiProp[] }) => {
-  return <div className="global-container">{/* <CurrencyConverter /> */}</div>;
+import { CurrencyConverter } from "../../components/CurrencyConverter";
+
+const Home = ({ rates }: { rates: RatesProp[] }) => {
+  return (
+    <div className="global-container">
+      <CurrencyConverter rates={rates} />
+    </div>
+  );
 };
 
 export default Home;

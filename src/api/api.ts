@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import { API_URL } from "../constants/constants";
-import { CurrencyApiProp } from "../types/types";
+import { API_URL } from "../constants";
+import { CurrencyApiProp } from "../types";
 
 export const getAll = async () => {
   try {

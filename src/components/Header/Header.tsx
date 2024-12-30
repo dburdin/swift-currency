@@ -1,20 +1,20 @@
-import { Loader } from "../Loader/Loader";
-import { CurrencyInfo } from "./CurrencyInfo/CurrencyInfo";
-import { Navigation } from "./Navigation/Navigation";
-import { Logo } from "./Logo/Logo";
+import { Loader } from "../Loader";
+import { CurrencyInfo } from "./CurrencyInfo";
+import { Navigation } from "./Navigation";
+import { Logo } from "./Logo";
 
-import { CurrencyApiProp } from "../../types/types";
+import { RatesProp } from "../../types";
 
-import "./header.scss";
+import styles from "./Header.module.scss";
 
-export const Header = ({ isLoading, currenciesInfo }: { isLoading: boolean; currenciesInfo: CurrencyApiProp[] }) => {
+export const Header = ({ isLoading, rates }: { isLoading: boolean; rates: RatesProp[] }) => {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <div className="global-container">
-        <div className="header-wrapper">
+        <div className={styles.headerWrapper}>
           <Logo />
           <Navigation />
-          {isLoading ? <Loader /> : <CurrencyInfo currenciesInfo={currenciesInfo} />}
+          {isLoading ? <Loader /> : <CurrencyInfo rates={rates} />}
         </div>
       </div>
     </header>

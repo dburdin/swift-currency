@@ -1,9 +1,10 @@
 .footer {
   background-color: #36454f;
   height: 80px;
+  display: flex;
 }
 
-.footer-wrapper {
+.footerWrapper {
   height: 100%;
   display: flex;
   justify-content: center;

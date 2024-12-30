@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Header } from "./Header/Header";
-import { Footer } from "./Footer/Footer";
-import Home from "../pages/Home/Home";
-import About from "../pages/About/About";
-import { getAll } from "../api/api";
-import { CurrencyApiProp } from "../types/types";
-import "./app.scss";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+
+import { getAll } from "../api";
+import { CurrencyApiProp } from "../types";
+
+import Home from "../pages/Home";
+import About from "../pages/About";
 
 export const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -19,7 +20,6 @@ export const App = () => {
       try {
         const data = await getAll();
         setCurrenciesInfo(data);
-        localStorage.setItem("currenciesInfo", JSON.stringify(data));
       } catch (error) {
         console.error("Error fetching currencies:", error);
       } finally {
@@ -29,13 +29,15 @@ export const App = () => {
 
     fetchCurrencies();
   }, []);
+  ///  adding UAH currency and cutting off unnecessary data
+  const rates = [{ cc: "UAH", rate: 1 }, ...currenciesInfo.map((item) => ({ cc: item.cc, rate: item.rate }))];
 
   return (
     <Router basename="/swift-currency/">
-      <Header isLoading={isLoading} currenciesInfo={currenciesInfo} />
+      <Header isLoading={isLoading} rates={rates} />
       <main className="main">
         <Routes>
-          <Route path="/" element={<Home currenciesInfo={currenciesInfo} />} />
+          <Route path="/" element={<Home rates={rates} />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
