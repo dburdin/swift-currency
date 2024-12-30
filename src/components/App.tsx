@@ -33,7 +33,7 @@ export const App = () => {
   const rates = [{ cc: "UAH", rate: 1 }, ...currenciesInfo.map((item) => ({ cc: item.cc, rate: item.rate }))];
 
   return (
-    <Router basename="/swift-currency/">
+    <Router>
       <Header isLoading={isLoading} rates={rates} />
       <main className="main">
         <Routes>
