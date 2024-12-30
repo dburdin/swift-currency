@@ -17,7 +17,7 @@ export const CurrencyInfo = ({ rates }: { rates: RatesProp[] }) => {
       {headerCurrencies.map((currency) => (
         <li key={currency.cc} className={styles.currencyInfoItem}>
           <span className={styles.accentColor}>{currency.cc}</span> {currency.rate.toFixed(2)}
-          <img src="src/assets/svg/ukraine-flag-icon.svg" alt="ukraine flag" width={"20px"} />
+          <img src="svg/ukraine-flag-icon.svg" alt="ukraine flag" width={"20px"} />
         </li>
       ))}
     </ul>

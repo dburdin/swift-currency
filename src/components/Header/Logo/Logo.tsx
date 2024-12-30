@@ -9,7 +9,7 @@ export const Logo = () => {
           <br />
           Currency
         </span>
-        <img width="80px" height="80px" src="src/assets/svg/logo.svg" alt="logo, currency exchange" />
+        <img width="80px" height="80px" src="/svg/logo.svg" alt="logo, currency exchange" />
       </div>
     </a>
   );
